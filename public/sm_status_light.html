@@ -1,0 +1,19 @@
+<div class="status-light-vis" ng-controller="StatusLightVisController">
+    <div ng-repeat="stat in status" style="float: left;">
+        <svg id="status_{{ stat.label }}" width="{{ vis.params.size }}" height="{{ vis.params.size }}" viewBox="0 0 {{ vis.params.size }} {{ vis.params.size }}"
+             preserveAspectRatio="xMinYMin meet"
+             style="border: 0px solid; background: {{ vis.params.backgroundcolor }};">
+
+            <circle cx="50%" cy="50%" r="{{ vis.params.size/2 - vis.params.strokewidth * 0.75 }}";
+                    style="stroke: {{stat.strokecolor}}; stroke-width: {{ vis.params.strokewidth }}px; fill: {{stat.fillcolor}}; opacity: 1.0;" />
+
+            <text x="50%" y="50%" text-anchor="middle" fill="{{ vis.params.textcolor }}" dy="0.0em">
+
+                <tspan style="font-weight: bold; font-size: {{ vis.params.fontsize }}">{{ stat.value }}</tspan>
+            </text>
+            <text x="50%" y="50%" ng-if="vis.params.showservername" text-anchor="middle" fill="{{ vis.params.textcolor }}" dy="1.0em">
+                <tspan style=" font-size: {{ vis.params.fontsize * 0.75 }};">{{ stat.label }}</tspan>
+            </text>
+        </svg>
+    </div>
+</div>

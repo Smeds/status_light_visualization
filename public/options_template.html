@@ -1,4 +1,64 @@
 <div class="form-group">
-  <label>Font Size - {{ vis.params.fontSize }}pt</label>
-  <input type="range" ng-model="vis.params.fontSize" class="form-control" min="12" max="120" />
+  <label>
+    <input type="checkbox" ng-model="vis.params.threeLevel">
+    Three level status (off, intermediate, on)
+  </label>
 </div>
+
+<div class="form-group">
+  <h4>Settings for low status</h4>
+  <label>fill color</label>
+  <input type="color" ng-model="vis.params.offFillColor" class="form-control"/>
+  <label>stroke color</label>
+  <input type="color" ng-model="vis.params.offStrokeColor" class="form-control"/>
+  <label>threshold, below or equal</label>
+  <input type="number" ng-model="vis.params.offThreshold" class="form-control"/>
+</div>
+
+<div class="form-group">
+  <h4>Settings for High status</h4>
+  <label>fill color</label>
+  <input type="color" ng-model="vis.params.onFillColor" class="form-control"/>
+  <label>stroke color</label>
+  <input type="color" ng-model="vis.params.onStrokeColor" class="form-control"/>
+  <div class="form-group" ng-if="vis.params.threeLevel">
+    <label>On status threshold, above</label>
+    <input type="number" ng-model="vis.params.onThreshold" class="form-control"/>
+  </div>
+</div>
+
+<div class="form-group" ng-if="vis.params.threeLevel">
+  <h4>Settings for intermediate status</h4>
+  <label>fill color <span ng-bind-template=""></span></label>
+  <input type="color" ng-model="vis.params.intermediateFillColor" class="form-control"/>
+  <label>stroke color <span ng-bind-template=""></span></label>
+  <input type="color" ng-model="vis.params.intermediateStrokeColor" class="form-control"/>
+</div>
+
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.showservername">
+    show server name
+  </label>
+</div>
+<div class="form-group">
+  <label>Background</label>
+  <input type="color" ng-model="vis.params.backgroundcolor" class="form-control"/>
+</div>
+
+<div class="form-group">
+  <h4>Font</h4>
+  <label>Size: {{ vis.params.fontsize }} pt</label>
+  <input type="range" ng-model="vis.params.fontsize" class="form-control" min="12" max="50" />
+  <label>Color</label>
+  <input type="color" ng-model="vis.params.textcolor" class="form-control"/>
+</div>
+
+<div class="form-group">
+  <label>Status light width/height: {{ vis.params.size }} px</label>
+  <input type="range" ng-model="vis.params.size" class="form-control" min="10" max="1024"/>
+  <label>Stroke width: {{ vis.params.strokewidth }} px</label>
+  <input type="range" ng-model="vis.params.strokewidth" class="form-control" min="0" max="1024"/>
+</div>
+
+

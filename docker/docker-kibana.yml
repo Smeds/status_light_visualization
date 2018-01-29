@@ -1,0 +1,13 @@
+version: '2'
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.1.2
+    environment:
+       SERVER_NAME: kibana.example.org
+       ELASTICSEARCH_URL: https://kibana.example.org:9200
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ./ca.crt:/usr/share/kibana/config/ca.crt
+      - ../../status_light_visualization:/usr/share/kibana/status_light_visualization:ro
+    ports:
+      - "5601:5601"
