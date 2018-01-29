@@ -1,4 +1,15 @@
 {
-  "name": "status_light_visualization",
-  "version": "kibana"
+  "name": "sm_status_light_visualization",
+  "version": "1.0.0",
+  "main": "index.js",
+  "kibana": {
+    "version": "kibana_version"
+  },
+  "repository": "Smeds/status_light_vis",
+  "license": "Apache-2.0",
+  "author": "Patrik Smeds <patrik.smeds@gmail.com>",
+  "keywords": [
+    "kibana",
+    "plugin"
+  ]
 }
