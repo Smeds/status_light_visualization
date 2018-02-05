@@ -85,22 +85,4 @@ module.controller('StatusLightVisController', function ($scope, courier, $timeou
             };
         });
     });
-
-    $scope.$watch(function() {
-        // Retrieve the id of the configured tags aggregation
-        var statusAggId = $scope.vis.aggs.bySchemaName['status'][0].id;
-        // Get the buckets of that aggregation
-        var buckets = resp.aggregations[statusAggId].buckets;
-        // Transform all buckets into tag objects
-        var metricsAgg = $scope.vis.aggs.bySchemaName['metric'][0];
-
-        $scope.status = buckets.map(function(bucket) {
-            return {
-                label: bucket.key,
-                value: formatValue(getValue(metricsAgg,bucket), $scope.vis.aggs.bySchemaName['metric'][0]['params']['field']['name']),
-                fillcolor: getColorFill(getValue(metricsAgg,bucket)),
-                strokecolor: getColorStroke(getValue(metricsAgg,bucket))
-            };
-        });
-    });
 });
