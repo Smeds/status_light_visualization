@@ -36,12 +36,6 @@
 </div>
 
 <div class="form-group">
-  <label>
-    <input type="checkbox" ng-model="vis.params.showservername">
-    show server name
-  </label>
-</div>
-<div class="form-group">
   <label>Background</label>
   <input type="color" ng-model="vis.params.backgroundcolor" class="form-control"/>
 </div>
@@ -61,4 +55,17 @@
   <input type="range" ng-model="vis.params.strokewidth" class="form-control" min="0" max="1024"/>
 </div>
 
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.showbucketkey">
+    show bucket key
+  </label>
+</div>
+
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.showvalue">
+    show value
+  </label>
+</div>
 
