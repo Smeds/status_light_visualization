@@ -1,7 +1,7 @@
 version: '2'
 services:
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.1.2
+    image: docker.elastic.co/kibana/kibana:6.2.1
     environment:
        SERVER_NAME: kibana.example.org
        ELASTICSEARCH_URL: https://kibana.example.org:9200

@@ -1,6 +1,6 @@
 {
   "name": "sm_status_light_visualization",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "kibana": {
     "version": "kibana_version"
