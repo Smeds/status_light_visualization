@@ -105,10 +105,10 @@ module.controller('StatusLightVisController', function ($scope, courier, $timeou
             text_label.setAttribute("y", "50%");
             text_label.setAttribute("text-anchor", "middle");
             text_label.setAttribute("fill", $scope.vis.params.textcolor);
-            if($scope.vis.params.showbucketkey) {
+            if($scope.vis.params.showvalue) {
                 text_label.setAttribute("dy", "1.0em");
             } else {
-                text_label.setAttribute("dy", "-0.5em");
+                text_label.setAttribute("dy", "0.0em");
             }
 
             var tspan_label = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
